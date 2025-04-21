@@ -1,20 +1,21 @@
 import streamlit as st
 
-# 誕生花＆誕生石データ（英語）
+# 誕生花＆誕生石データ
 birth_data = {
-    1: {"flower": "narcissus", "flower_ja": "水仙", "gemstone": "garnet", "gemstone_ja": "ガーネット", "color": "deep red"},
-    2: {"flower": "marguerite", "flower_ja": "マーガレット", "gemstone": "amethyst", "gemstone_ja": "アメジスト", "color": "purple"},
-    3: {"flower": "tulip", "flower_ja": "チューリップ", "gemstone": "aquamarine", "gemstone_ja": "アクアマリン", "color": "pale blue"},
-    4: {"flower": "cherry blossom", "flower_ja": "桜", "gemstone": "diamond", "gemstone_ja": "ダイヤモンド", "color": "clear or white"},
-    5: {"flower": "lily of the valley", "flower_ja": "すずらん", "gemstone": "emerald", "gemstone_ja": "エメラルド", "color": "rich green"},
-    6: {"flower": "rose", "flower_ja": "バラ", "gemstone": "pearl", "gemstone_ja": "パール", "color": "soft pink or white"},
-    7: {"flower": "lily", "flower_ja": "百合", "gemstone": "ruby", "gemstone_ja": "ルビー", "color": "vivid red"},
-    8: {"flower": "sunflower", "flower_ja": "ひまわり", "gemstone": "peridot", "gemstone_ja": "ペリドット", "color": "light green"},
-    9: {"flower": "dahlia", "flower_ja": "ダリア", "gemstone": "sapphire", "gemstone_ja": "サファイア", "color": "deep blue"},
-    10: {"flower": "gerbera", "flower_ja": "ガーベラ", "gemstone": "opal", "gemstone_ja": "オパール", "color": "multicolor or iridescent"},
-    11: {"flower": "chrysanthemum", "flower_ja": "菊", "gemstone": "topaz", "gemstone_ja": "トパーズ", "color": "golden yellow"},
-    12: {"flower": "poinsettia", "flower_ja": "ポインセチア", "gemstone": "turquoise", "gemstone_ja": "トルコ石", "color": "turquoise blue"},
+    1: {"flower": "narcissus", "flower_ja": "水仙", "gemstone": "garnet", "color": "deep red"},
+    2: {"flower": "marguerite", "flower_ja": "マーガレット", "gemstone": "amethyst", "color": "purple"},
+    3: {"flower": "tulip", "flower_ja": "チューリップ", "gemstone": "aquamarine", "color": "pale blue"},
+    4: {"flower": "cherry blossom", "flower_ja": "桜", "gemstone": "diamond", "color": "clear or white"},
+    5: {"flower": "lily of the valley", "flower_ja": "すずらん", "gemstone": "emerald", "color": "rich green"},
+    6: {"flower": "rose", "flower_ja": "バラ", "gemstone": "pearl", "color": "soft pink or white"},
+    7: {"flower": "lily", "flower_ja": "百合", "gemstone": "ruby", "color": "vivid red"},
+    8: {"flower": "sunflower", "flower_ja": "ひまわり", "gemstone": "peridot", "color": "light green"},
+    9: {"flower": "dahlia", "flower_ja": "ダリア", "gemstone": "sapphire", "color": "deep blue"},
+    10: {"flower": "gerbera", "flower_ja": "ガーベラ", "gemstone": "opal", "color": "multicolor or iridescent"},
+    11: {"flower": "chrysanthemum", "flower_ja": "菊", "gemstone": "topaz", "color": "golden yellow"},
+    12: {"flower": "poinsettia", "flower_ja": "ポインセチア", "gemstone": "turquoise", "color": "turquoise blue"},
 }
+
 # カスタムプロンプト（特定月）
 custom_prompts = {
     5: "A lily of the valley flower, with multiple small bell-shaped blossoms hanging from a single curved stem. Each blossom is made of translucent emerald crystal, glowing softly. The background features gentle warm bokeh lights.",
@@ -30,21 +31,21 @@ month = st.selectbox("誕生月を選んでください", list(range(1, 13)), ke
 # 選んだ月に応じて表示
 if month in birth_data:
     data = birth_data[month]
-    flower_ja = data["flower_ja"]
-    gemstone_ja = data["gemstone_ja"]
     flower_en = data["flower"]
-    gemstone_en = data["gemstone"]
+    flower_ja = data["flower_ja"]
+    gemstone = data["gemstone"]
+    color = data["color"]
+
     # プロンプト生成
     if month in custom_prompts:
         prompt = custom_prompts[month]
     else:
-        color = data["color"]
         prompt = (
-            f"A full view of a magical {flower} flower with gemstone-like petals made of {gemstone}, "
+            f"A full view of a magical {flower_en} flower with gemstone-like petals made of {gemstone}, "
             f"featuring a translucent, faceted texture that reflects {color} hues. "
             f"The petals shimmer with soft sparkles. A golden stamen sits at the center, "
             f"and the background glows with gentle bokeh orbs. Macro, ultra-detailed, photorealistic."
         )
 
-    st.subheader(f"【{month}月】{flower_ja}（{flower_en.title()}）× {gemstone_ja}（{gemstone_en.title()}）")
+    st.subheader(f"【{month}月】{flower_ja} ({flower_en.title()}) × {gemstone.title()}")
     st.text_area("プロンプト", value=prompt, height=250)
