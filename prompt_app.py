@@ -32,6 +32,8 @@ if month in birth_data:
     data = birth_data[month]
     flower = data["flower"]
     gemstone = data["gemstone"]
+    flower_ja = data["flower_ja"]
+    gemstone_ja = data["gemstone_ja"]
 
     # プロンプト生成
     if month in custom_prompts:
@@ -45,5 +47,5 @@ if month in birth_data:
             f"and the background glows with gentle bokeh orbs. Macro, ultra-detailed, photorealistic."
         )
 
-    st.subheader(f"【{month}月】{data['flower_ja']} ({flower.title()}) × {gemstone.title()}")
+    st.subheader(f"【{month}月】{flower_ja}（{flower_en.title()}）× {gemstone_ja}（{gemstone_en.title()}）")
     st.text_area("プロンプト", value=prompt, height=250)
