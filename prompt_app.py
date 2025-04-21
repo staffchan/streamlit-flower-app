@@ -2,18 +2,18 @@ import streamlit as st
 
 # 誕生花＆誕生石データ（英語）
 birth_data = {
-    1: {"flower": "narcissus", "flower_ja": "水仙", "gemstone": "garnet", "color": "deep red"},
-    2: {"flower": "marguerite", "flower_ja": "マーガレット", "gemstone": "amethyst", "color": "purple"},
-    3: {"flower": "tulip", "flower_ja": "チューリップ", "gemstone": "aquamarine", "color": "pale blue"},
-    4: {"flower": "cherry blossom", "flower_ja": "桜", "gemstone": "diamond", "color": "clear or white"},
-    5: {"flower": "lily of the valley", "flower_ja": "すずらん", "gemstone": "emerald", "color": "rich green"},
-    6: {"flower": "rose", "flower_ja": "バラ", "gemstone": "pearl", "color": "soft pink or white"},
-    7: {"flower": "lily", "flower_ja": "百合", "gemstone": "ruby", "color": "vivid red"},
-    8: {"flower": "sunflower", "flower_ja": "ひまわり", "gemstone": "peridot", "color": "light green"},
-    9: {"flower": "dahlia", "flower_ja": "ダリア", "gemstone": "sapphire", "color": "deep blue"},
-    10: {"flower": "gerbera", "flower_ja": "ガーベラ", "gemstone": "opal", "color": "multicolor or iridescent"},
-    11: {"flower": "chrysanthemum", "flower_ja": "菊", "gemstone": "topaz", "color": "golden yellow"},
-    12: {"flower": "poinsettia", "flower_ja": "ポインセチア", "gemstone": "turquoise", "color": "turquoise blue"},
+    1: {"flower": "narcissus", "flower_ja": "水仙", "gemstone": "garnet", "gemstone_ja": "ガーネット", "color": "deep red"},
+    2: {"flower": "marguerite", "flower_ja": "マーガレット", "gemstone": "amethyst", "gemstone_ja": "アメジスト", "color": "purple"},
+    3: {"flower": "tulip", "flower_ja": "チューリップ", "gemstone": "aquamarine", "gemstone_ja": "アクアマリン", "color": "pale blue"},
+    4: {"flower": "cherry blossom", "flower_ja": "桜", "gemstone": "diamond", "gemstone_ja": "ダイヤモンド", "color": "clear or white"},
+    5: {"flower": "lily of the valley", "flower_ja": "すずらん", "gemstone": "emerald", "gemstone_ja": "エメラルド", "color": "rich green"},
+    6: {"flower": "rose", "flower_ja": "バラ", "gemstone": "pearl", "gemstone_ja": "パール", "color": "soft pink or white"},
+    7: {"flower": "lily", "flower_ja": "百合", "gemstone": "ruby", "gemstone_ja": "ルビー", "color": "vivid red"},
+    8: {"flower": "sunflower", "flower_ja": "ひまわり", "gemstone": "peridot", "gemstone_ja": "ペリドット", "color": "light green"},
+    9: {"flower": "dahlia", "flower_ja": "ダリア", "gemstone": "sapphire", "gemstone_ja": "サファイア", "color": "deep blue"},
+    10: {"flower": "gerbera", "flower_ja": "ガーベラ", "gemstone": "opal", "gemstone_ja": "オパール", "color": "multicolor or iridescent"},
+    11: {"flower": "chrysanthemum", "flower_ja": "菊", "gemstone": "topaz", "gemstone_ja": "トパーズ", "color": "golden yellow"},
+    12: {"flower": "poinsettia", "flower_ja": "ポインセチア", "gemstone": "turquoise", "gemstone_ja": "トルコ石", "color": "turquoise blue"},
 }
 # カスタムプロンプト（特定月）
 custom_prompts = {
