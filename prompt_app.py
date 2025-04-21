@@ -30,11 +30,10 @@ month = st.selectbox("誕生月を選んでください", list(range(1, 13)), ke
 # 選んだ月に応じて表示
 if month in birth_data:
     data = birth_data[month]
-    flower = data["flower"]
-    gemstone = data["gemstone"]
+    flower_en = data["flower"]
+    gemstone_en = data["gemstone"]
     flower_ja = data["flower_ja"]
     gemstone_ja = data["gemstone_ja"]
-
     # プロンプト生成
     if month in custom_prompts:
         prompt = custom_prompts[month]
